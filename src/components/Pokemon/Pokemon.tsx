@@ -23,7 +23,9 @@ const Pokemon: React.FC = () => {
     <PokemonWrapper>
       <PokemonDetails>
         <div className="row">
-          <img alt="" src={pokemonDetails?.sprites.front_default} />
+          <div>
+            <img alt="" src={pokemonDetails?.sprites.front_default} />
+          </div>
           <div>
             <h1>{pokemonDetails?.name.toLocaleUpperCase()}</h1>
             <div>
@@ -78,26 +80,73 @@ const PokemonWrapper = styled.div`
 const PokemonDetails = styled(Paper)`
   margin: 2rem;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
   & img {
     width: 400px;
   }
   & .row {
+    flex: 1;
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    & h1 {
+      flex: 1;
+    }
+    & div {
+      flex: 1;
+    }
     & .details-data {
-        border-radius: 5px;
+      flex: 1;
+      border-radius: 5px;
       border: 2px solid #000;
       padding: 1rem;
       margin: 2rem;
     }
     & .stats-details {
+      flex: 1;
       width: 100%;
       & .stat {
         display: flex;
         justify-content: space-between;
+      }
+    }
+    @media screen and (max-width: 1430px) {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 90vw;
+  }
+
+  @media screen and (max-width: 580px) {
+    & .row {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    & img {
+      width: 250px;
+    }
+    & .row {
+      font-size: 1rem;
+      & .details-data {
+        padding: 0.5rem;
+        margin: 1.5rem;
+      }
+    }
+  }
+  @media screen and (max-width: 280px) {
+    & .row {
+      font-size: 0.8rem;
+      & .details-data {
+        padding: 0.5rem;
+        margin: 1.5rem;
       }
     }
   }

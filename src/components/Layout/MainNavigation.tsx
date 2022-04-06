@@ -18,7 +18,6 @@ const Nav = styled.nav`
   width: 100vw;
   display: flex;
   justify-content: space-between;
-
   overflow-x: hidden;
   padding: 0.5rem calc((100vw-1000px) / 2);
 `;

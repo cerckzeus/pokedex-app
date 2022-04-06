@@ -26,6 +26,7 @@ const StyledMain = styled.main`
   display: flex;
   flex: 1;
   height: 100vh;
+  overflow-x: hidden;
 `;
 
 export default Layout;
